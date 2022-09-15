@@ -82,7 +82,7 @@ const Signup = props => {
             marginRight='-200'
             btnLabel="Signup"
             Press={() => {
-              alert('Accoutn created');
+              alert('Account created Succesfully');
               props.navigation.navigate('Login');
             }}
           />
