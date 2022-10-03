@@ -1,4 +1,5 @@
 import {React,useState} from "react";
+import Nav from './Nav'
 import styled  from 'styled-components';
 import {Link} from 'react-router-dom'
 import { Box, 
@@ -13,12 +14,15 @@ const Login = () => {
       const [email, setEmail] = useState('');
       const [password, setPassword] = useState('');
 
+const AuthContainer = styled.div`
+  background:var(--primary-color);
+  margin-top:0px;
+`      
 const Wrapper = styled.div`
-              background:var(--primary-color);
               display:flex;
-              justify-content:center;
+              justify-content:space-around;
               align-items: center;
-              min-height: 100vh;
+              min-height: 90vh;
           `
 
 const LinkWrap = styled.span`
@@ -28,9 +32,17 @@ const LinkWrap = styled.span`
                     color: var(--black);
                  }
                 `
+const Img = styled.img``
 
   return (
+    <AuthContainer>
+    <Nav/>
     <Wrapper>
+      <Box sx = {{
+         mt:16
+      }}>
+        <Img src = "assets/ThinkIdea.png" alt = "think"/>
+      </Box>
       <Paper variant="elevation"
           elevation={2}
           className="login-background">
@@ -47,7 +59,7 @@ const LinkWrap = styled.span`
           <Grid item>
             <Typography component="h1" variant="h4" align = "center">
                  Get Started
-             </Typography>
+            </Typography>
           </Grid>
           <Grid item align = "center">
              <Typography variant="body2"  >
@@ -87,10 +99,35 @@ const LinkWrap = styled.span`
                 Login
               </Button>
               </Grid>
+               <Grid item align = "center" sx = {{ margin : '20px' }}>
+           <Typography variant = "body2">
+            ---------------------- or login with ----------------------
+            </Typography>
+        </Grid>
+               <Grid item>
+           <Paper variant="elevation"
+          elevation={2}>
+            <Button type="submit" variant="contained" 
+              sx = {{
+                backgroundColor: 'custom.light',
+                color : 'secondary.main',
+                width:'100%'
+                }}>
+                <Img src = "assets/Google.png" alt = "Google" style ={{width:'20px', margin:'10px'}}></Img>
+                          Continue with Google
+              </Button>
+              </Paper>
+         </Grid>
         </Grid>
         </Box>
         </Paper>
+        <Box sx = {{
+         mt:16
+      }}>
+        <Img src = "assets/meetPeople.png" alt = "meet"/>
+      </Box>
     </Wrapper>
+    </AuthContainer>
     );
 };
 
