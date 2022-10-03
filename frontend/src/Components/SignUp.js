@@ -150,11 +150,18 @@ const SignUp = () => {
         <Grid item>
            <Paper variant="elevation"
           elevation={2}>
-            <Button type="submit" variant="contained" 
+            <Button type="submit" variant="contained"
+             disableElevation
+             disableRipple
+             size="small" 
               sx = {{
                 backgroundColor: 'custom.light',
                 color : 'secondary.main',
-                width:'100%'
+                width:'100%',
+                ml: 1,
+                "&.MuiButtonBase-root:hover": {
+                  bgcolor: "custom.light"
+                }
                 }}>
                   <Img src = "assets/Google.png" alt = "Google" style ={{width:'20px', margin:'10px'}}></Img>
                   <Typography variant = "body1">
