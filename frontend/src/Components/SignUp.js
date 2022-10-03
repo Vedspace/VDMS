@@ -10,35 +10,35 @@ import { Box,
   Paper
 } from '@mui/material'
 
+const AuthContainer = styled.div`
+background:var(--primary-color);
 
-
-
-const SignUp = () => {
-  const AuthContainer = styled.div`
-  background:var(--primary-color);
-  
 `      
 const Wrapper = styled.div`
-              display:flex;
-              justify-content:space-around;
-              align-items: center;
-              min-height: 100vh;
-          `
+            display:flex;
+            justify-content:space-around;
+            align-items: center;
+            min-height: 100vh;
+        `
 
 const LinkWrap = styled.span`
-                color:'#3F3D56';
-                cursor:pointer;
-                &:hover {
-                    color: var(--black);
-                 }
-                `
+              color:'#3F3D56';
+              cursor:pointer;
+              &:hover {
+                color: var(--black);
+             }
+              `
 const Img = styled.img`
-        width:'10px';
-`
+      width:'10px';
+      `
+
+const SignUp = () => {
+
       const [firstName, setFirstName] = useState("");
       const [lastName, setLastName] = useState("");
       const [email, setEmail] = useState("");
       const [password, setPassword] = useState("");
+      const [number, setNumber] = useState("");
 
 
   return (
@@ -46,7 +46,7 @@ const Img = styled.img`
       <Nav/>
     <Wrapper>
        <Box sx = {{
-         mt:16
+         mt:15
       }}>
         <Img src = "assets/ThinkIdea.png" alt = "think"/>
       </Box>
@@ -62,7 +62,7 @@ const Img = styled.img`
             borderRadius: '30px'
           }          
           }> 
-        <Grid container direction="column" spacing={1} >
+        <Grid container direction="column" spacing={1}  >
           <Grid item>
             <Typography component="h1" variant="h4" align = "center">
                  Get Started
@@ -106,6 +106,17 @@ const Img = styled.img`
                onChange={e => setEmail(e.target.value)}
               />
               </Grid>
+              <Grid item>
+              <TextField
+              label="Phone Number"
+              variant="standard"
+              type="number"
+              required
+              value={number}
+              fullWidth
+               onChange={e => setNumber(e.target.value)}
+              />
+              </Grid>
           <Grid item>
               <TextField
                  label="Password"
@@ -117,6 +128,7 @@ const Img = styled.img`
                 onChange={e => setPassword(e.target.value)}
                  fullWidth
               />
+            
               </Grid>
               <Grid item sx = {{mt : 3}}>
               <Button type="submit" variant="contained" 
@@ -129,6 +141,7 @@ const Img = styled.img`
               </Button>
               </Grid>
         </Grid>
+        
         <Grid item align = "center" sx = {{ margin : '20px' }}>
            <Typography variant = "body2">
             ---------------------- or signup with ----------------------
