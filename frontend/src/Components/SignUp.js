@@ -1,24 +1,28 @@
 import {React,useState} from 'react'
 import styled  from 'styled-components';
+import Nav from './Nav'
 import {Link} from 'react-router-dom'
 import { Box, 
   Grid , 
   Typography, 
-  Stack,
   Button,
   TextField,
   Paper
 } from '@mui/material'
+
 const SignUp = () => {
       const [firstName, setFirstName] = useState("");
       const [lastName, setLastName] = useState("");
       const [email, setEmail] = useState("");
       const [password, setPassword] = useState("");
 
+const AuthContainer = styled.div`
+  background:var(--primary-color);
+  
+`      
 const Wrapper = styled.div`
-              background:var(--primary-color);
               display:flex;
-              justify-content:center;
+              justify-content:space-around;
               align-items: center;
               min-height: 100vh;
           `
@@ -30,11 +34,19 @@ const LinkWrap = styled.span`
                     color: var(--black);
                  }
                 `
-                
-                
+const Img = styled.img`
+        width:'10px';
+`
 
   return (
+    <AuthContainer>
+      <Nav/>
     <Wrapper>
+       <Box sx = {{
+         mt:16
+      }}>
+        <Img src = "assets/ThinkIdea.png" alt = "think"/>
+      </Box>
       <Paper variant="elevation"
           elevation={2}
           className="login-background">
@@ -59,9 +71,8 @@ const LinkWrap = styled.span`
              </Typography>
           </Grid>
           <Grid item>
-
              <TextField
-                label="firstName"
+                label="First Name"
                 variant="standard"
                 placeholder="Enter your FirstName"
                 value={firstName}
@@ -72,7 +83,7 @@ const LinkWrap = styled.span`
         </Grid>
         <Grid item>
               <TextField
-                label="lastName"
+                label="Last Name"
                 variant="standard"
                 placeholder="Enter your lastName"
                 required
@@ -115,9 +126,37 @@ const LinkWrap = styled.span`
               </Button>
               </Grid>
         </Grid>
+        <Grid item align = "center" sx = {{ margin : '20px' }}>
+           <Typography variant = "body2">
+            ---------------------- or signup with ----------------------
+            </Typography>
+        </Grid>
+        <Grid item>
+           <Paper variant="elevation"
+          elevation={2}>
+            <Button type="submit" variant="contained" 
+              sx = {{
+                backgroundColor: 'custom.light',
+                color : 'secondary.main',
+                width:'100%'
+                }}>
+                  <Img src = "assets/Google.png" alt = "Google" style ={{width:'20px', margin:'10px'}}></Img>
+                  <Typography variant = "body1">
+                            Continue with Google
+                  </Typography>
+              </Button>
+              </Paper>
+        </Grid>
         </Box>
         </Paper>
+
+        <Box sx = {{
+         mt:16
+      }}>
+        <Img src = "assets/meetPeople.png" alt = "meet"/>
+      </Box>
     </Wrapper>
+    </AuthContainer>
   )
 }
 
