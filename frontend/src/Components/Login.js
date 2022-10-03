@@ -10,9 +10,6 @@ import { Box,
   TextField,
   Paper
 } from '@mui/material'
-const Login = () => {
-      const [email, setEmail] = useState('');
-      const [password, setPassword] = useState('');
 
 const AuthContainer = styled.div`
   background:var(--primary-color);
@@ -33,6 +30,10 @@ const LinkWrap = styled.span`
                  }
                 `
 const Img = styled.img``
+
+const Login = () => {
+      const [email, setEmail] = useState('');
+      const [password, setPassword] = useState('');
 
   return (
     <AuthContainer>
