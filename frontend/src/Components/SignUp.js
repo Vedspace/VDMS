@@ -10,7 +10,11 @@ import { Box,
   Paper
 } from '@mui/material'
 
-const AuthContainer = styled.div`
+
+
+
+const SignUp = () => {
+  const AuthContainer = styled.div`
   background:var(--primary-color);
   
 `      
@@ -31,9 +35,6 @@ const LinkWrap = styled.span`
 const Img = styled.img`
         width:'10px';
 `
-
-
-const SignUp = () => {
       const [firstName, setFirstName] = useState("");
       const [lastName, setLastName] = useState("");
       const [email, setEmail] = useState("");

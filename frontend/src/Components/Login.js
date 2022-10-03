@@ -1,25 +1,26 @@
 import {React,useState} from "react";
 import Nav from './Nav'
 import styled  from 'styled-components';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Box, 
   Grid , 
   Typography, 
-  Stack,
   Button,
   TextField,
   Paper
 } from '@mui/material'
 
+const Login = () => {
+ 
 const AuthContainer = styled.div`
   background:var(--primary-color);
-  margin-top:0px;
+  overflow:hidden;
 `      
 const Wrapper = styled.div`
               display:flex;
               justify-content:space-around;
               align-items: center;
-              min-height: 90vh;
+              min-height: 100vh;
           `
 
 const LinkWrap = styled.span`
@@ -31,9 +32,10 @@ const LinkWrap = styled.span`
                 `
 const Img = styled.img``
 
-const Login = () => {
+
       const [email, setEmail] = useState('');
       const [password, setPassword] = useState('');
+
 
   return (
     <AuthContainer>
