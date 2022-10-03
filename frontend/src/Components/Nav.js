@@ -6,7 +6,7 @@ const Img = styled.img`
 
 const Nav = () => {
   return (
-       <div style = {{background : 'var(--primary-color)', width:'10vw' , margin : '0px'}}>
+       <div style = {{background : 'var(--primary-color)', width:'10vw', margin: '10px'}}>
        <Img src = "assets/Logo-bg.png" alt = "Logo"></Img>
        </div>  
   )
