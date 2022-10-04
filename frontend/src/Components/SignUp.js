@@ -3,9 +3,11 @@ import styled from "styled-components";
 import Nav from "./Nav";
 import { Link } from "react-router-dom";
 import { Box, Grid, Typography, Button, TextField, Paper } from "@mui/material";
+import { motion } from "framer-motion";
 
 const AuthContainer = styled.div`
   background: var(--primary-color);
+  overflow: hidden
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -53,6 +55,13 @@ const SignUp = () => {
               borderRadius: "30px",
             }}
           >
+             <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{opacity: 0}}
+            >
+
+          
             <Grid container direction="column" spacing={1}>
               <Grid item>
                 <Typography component="h1" variant="h4" align="center">
@@ -170,6 +179,7 @@ const SignUp = () => {
                 </Button>
               </Paper>
             </Grid>
+            </motion.div>
           </Box>
         </Paper>
 

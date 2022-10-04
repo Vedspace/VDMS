@@ -1,23 +1,18 @@
-import Login from "./Components/Login";
-import SignUp from "./Components/SignUp";
+import React from "react";
 
 import {
   BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
 } from "react-router-dom"
-import React from "react";
+
+import AnimatedRoutes from "./Components/AnimatedRoutes";
 
 function App() {
-  return (
-    <React.Fragment>
-      <Router>
-        <Routes>
-                <Route path="/login" element={<Login/>} />
-                <Route path="/signup" element={<SignUp/>} />
-        </Routes>
-      </Router>
+ 
+    return (
+      <React.Fragment>
+        <Router>
+    <AnimatedRoutes/>
+    </Router>
     </React.Fragment>
   );
 }
