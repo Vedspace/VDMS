@@ -3,6 +3,8 @@ import Nav from "./Nav";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Box, Grid, Typography, Button, TextField, Paper } from "@mui/material";
+import { motion } from "framer-motion";
+
 
   const AuthContainer = styled.div`
     background: var(--primary-color);
@@ -15,17 +17,20 @@ import { Box, Grid, Typography, Button, TextField, Paper } from "@mui/material";
     min-height: 100vh;
   `;
 
-  const LinkWrap = styled.span`
-    color: "#3F3D56";
-    cursor: pointer;
-    &:hover {
-      color: var(--black);
-    }
-  `;
-  const Img = styled.img``;
+
+const LinkWrap = styled.span`
+  color: "#3F3D56";
+  cursor: pointer;
+  &:hover {
+    color: var(--black);
+  }
+`;
+const Img = styled.img``;
+
 
   
 const Login = () => {
+
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -44,6 +49,7 @@ const Login = () => {
         <Paper variant="elevation" elevation={2} className="login-background">
           <Box
             padding={2}
+            
             sx={{
               backgroundColor: "custom.light",
               width: "30vw",
@@ -51,6 +57,13 @@ const Login = () => {
               borderRadius: "30px",
             }}
           >
+            <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{opacity: 0}}
+            >
+
+           
             <Grid container direction="column" spacing={1}>
               <Grid item>
                 <Typography component="h1" variant="h4" align="center">
@@ -112,16 +125,16 @@ const Login = () => {
                     type="submit"
                     variant="contained"
                     disableElevation
-                    disableRipple
-                    size="small"
+                  disableRipple
+                  size="small"
                     sx={{
                       backgroundColor: "custom.light",
                       color: "secondary.main",
                       width: "100%",
                       ml: 1,
-                      "&.MuiButtonBase-root:hover": {
-                        bgcolor: "custom.light",
-                      },
+                    "&.MuiButtonBase-root:hover": {
+                      bgcolor: "custom.light",
+                    },
                     }}
                   >
                     <Img
@@ -134,6 +147,7 @@ const Login = () => {
                 </Paper>
               </Grid>
             </Grid>
+            </motion.div>
           </Box>
         </Paper>
         <Box
@@ -142,6 +156,7 @@ const Login = () => {
           }}
         >
           <Img src="assets/meetPeople.png" alt="meet" />
+         
         </Box>
       </Wrapper>
     </AuthContainer>
