@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Box, Grid, Typography, Button, TextField, Paper } from "@mui/material";
 
-const Login = () => {
   const AuthContainer = styled.div`
     background: var(--primary-color);
     overflow: hidden;
@@ -24,6 +23,9 @@ const Login = () => {
     }
   `;
   const Img = styled.img``;
+
+  
+const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
