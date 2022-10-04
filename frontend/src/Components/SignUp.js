@@ -7,8 +7,9 @@ import { motion } from "framer-motion";
 
 const AuthContainer = styled.div`
   background: var(--primary-color);
-  overflow: hidden
-`;
+ overflow: hidden;
+  `;
+
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-around;
@@ -23,11 +24,14 @@ const LinkWrap = styled.span`
     color: var(--black);
   }
 `;
+
 const Img = styled.img`
   width: "10px";
 `;
 
 const SignUp = () => {
+
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");

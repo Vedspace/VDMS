@@ -5,16 +5,18 @@ import { Link } from "react-router-dom";
 import { Box, Grid, Typography, Button, TextField, Paper } from "@mui/material";
 import { motion } from "framer-motion";
 
-const AuthContainer = styled.div`
-  background: var(--primary-color);
-  overflow: hidden;
-`;
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 100vh;
-`;
+
+  const AuthContainer = styled.div`
+    background: var(--primary-color);
+    overflow: hidden;
+  `;
+  const Wrapper = styled.div`
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+  `;
+
 
 const LinkWrap = styled.span`
   color: "#3F3D56";
@@ -25,7 +27,11 @@ const LinkWrap = styled.span`
 `;
 const Img = styled.img``;
 
+
+  
 const Login = () => {
+
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
