@@ -62,6 +62,7 @@ const SignUp = () => {
             >
 
           
+          
             <Grid container direction="column" spacing={1}>
               <Grid item>
                 <Typography component="h1" variant="h4" align="center">

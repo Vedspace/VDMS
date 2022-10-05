@@ -1,5 +1,6 @@
 import React from "react";
 
+  
 import {
   BrowserRouter as Router,
 } from "react-router-dom"
@@ -11,7 +12,9 @@ function App() {
     return (
       <React.Fragment>
         <Router>
+       
     <AnimatedRoutes/>
+        
     </Router>
     </React.Fragment>
   );
