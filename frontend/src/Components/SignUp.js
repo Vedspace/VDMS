@@ -29,6 +29,7 @@ const Img = styled.img`
   width: "10px";
 `;
 
+
 const SignUp = () => {
 
 
@@ -63,10 +64,8 @@ const SignUp = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{opacity: 0}}
-            >
+             >
 
-          
-          
             <Grid container direction="column" spacing={1}>
               <Grid item>
                 <Typography component="h1" variant="h4" align="center">
