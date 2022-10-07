@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   min-height: 100vh;
 `;
 
+// otp model
 const Otp = () => {
   const [ number , setNumber] = useState("");
   const [ otp , setOtp] = useState("");
