@@ -2,7 +2,7 @@ import React from 'react';
 // import {useThemeContext} from '../../../../utility/AppContextProvider/ThemeContextProvider';
 import {Box} from '@mui/material';
 import {ReactComponent as Logo} from '../../../../../assets/icon/logo.svg';
-import {ReactComponent as LogoText} from '../../../../../assets/icon/logo_text.svg';
+
 
 const AppLogo = () => {
   // const {theme} = useThemeContext();
@@ -31,7 +31,7 @@ const AppLogo = () => {
           },
         }}
       > */}
-        <LogoText  />
+        
       {/* </Box> */}
     </Box>
   );
