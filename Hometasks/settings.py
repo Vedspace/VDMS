@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ['10.0.2.2','127.0.0.1','*']
 
 
 # Application definition
-
+AUTH_USER_MODEL = 'accounts.CustomUser'
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -141,7 +141,7 @@ REST_FRAMEWORK = {
     ),
 }
 
-AUTH_USER_MODEL = 'accounts.CustomUser'
+
 FCM_SERVER_KEY = 'AAAAC8z0aAU:APA91bHL5sPpu8Rcgj_gMfuMk4A3DaBHzz8tyVJt4byzUiRD7kfRLfV0PiVcXZIPKz-nB4R3ASNfHp28i_A9bVWclrF0oDBOwa_mKpqPeN2fTEijPww1qPKVEKbVNybUDo9UkUw2o1p6'
 CHANNEL_LAYERS = {
     'default': {
