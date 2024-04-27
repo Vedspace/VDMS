@@ -20,18 +20,20 @@ class AttendanceViewSet(viewsets.ModelViewSet):
         if time_slot not in valid_time_slots:
             return Response({'error': 'Invalid time slot'}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Get or create an attendance record for today
+        local_now = timezone.localtime(timezone.now())  # Convert to local timezone
+
+        # Get or create an attendance record for today using the local date
         attendance, created = Attendance.objects.get_or_create(
             worker=request.user,
-            date=timezone.now().date(),
-            defaults={time_slot: timezone.now().time()}
+            date=local_now.date(),  # Use local date
+            defaults={time_slot: local_now.time()}  # Use local time for the default time slot
         )
 
         # If the record already exists, and the time slot is not yet marked, update it
         if not created:
             current_time = getattr(attendance, time_slot)
             if current_time is None:
-                setattr(attendance, time_slot, timezone.now().time())
+                setattr(attendance, time_slot, local_now.time())  # Set with local time
                 attendance.save()
 
         return Response({
