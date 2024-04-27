@@ -27,5 +27,5 @@ class AttendanceAdmin(admin.ModelAdmin):
             return None
         if timezone.is_naive(datetime_obj):
             # Assume datetime is in UTC, make it timezone aware and convert to local timezone
-            datetime_obj = timezone.make_aware(datetime_obj, timezone.utc)
+            datetime_obj = timezone.make_aware(datetime_obj, timezone.ist)
         return timezone.localtime(datetime_obj).strftime('%Y-%m-%d %H:%M:%S')
