@@ -13,24 +13,29 @@ class AttendanceViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['post'])
     def mark_attendance(self, request):
+        time_slot = request.data.get('time_slot', 'time1')  # Default to 'time1' if not specified
+        valid_time_slots = ['time1', 'time2', 'time3']
+
+        # Ensure the provided time slot is valid
+        if time_slot not in valid_time_slots:
+            return Response({'error': 'Invalid time slot'}, status=status.HTTP_400_BAD_REQUEST)
+
         # Get or create an attendance record for today
         attendance, created = Attendance.objects.get_or_create(
             worker=request.user,
             date=timezone.now().date(),
-            defaults={'time1': timezone.now().time()}
+            defaults={time_slot: timezone.now().time()}
         )
-        
-        # If already created, update the next time slot
+
+        # If the record already exists, and the time slot is not yet marked, update it
         if not created:
-            if not attendance.time2:
-                attendance.time2 = timezone.now().time()
-            elif not attendance.time3:
-                attendance.time3 = timezone.now().time()
-            attendance.save()
-        
+            current_time = getattr(attendance, time_slot)
+            if current_time is None:
+                setattr(attendance, time_slot, timezone.now().time())
+                attendance.save()
+
         return Response({
             "status": "success",
             "data": AttendanceSerializer(attendance).data
         }, status=status.HTTP_200_OK)
 
-# Adjust the permission_classes as per your project’s security requirements
