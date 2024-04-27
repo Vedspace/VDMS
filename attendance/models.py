@@ -9,4 +9,4 @@ class Attendance(models.Model):
     time3 = models.TimeField(null=True, blank=True)
 
     def __str__(self):
-        return f"{self.worker.username} - {self.date}"
+        return f"{self.worker.phone} - {self.date}"
