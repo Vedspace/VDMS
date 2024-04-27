@@ -8,7 +8,7 @@ urlpatterns = [
     path('', include('accounts.urls')),  # Route API requests to tasks.urls
     path('api/', include('cashflow.urls')),
     path('api/', include('notifications.urls')),
-    
+    path('api/', include('attendance.urls')), 
     
    
 ]
