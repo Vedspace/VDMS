@@ -65,7 +65,7 @@ MIDDLEWARE = [
 
 ASGI_APPLICATION = 'Hometasks.asgi.application'
 ROOT_URLCONF = 'Hometasks.urls'
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
