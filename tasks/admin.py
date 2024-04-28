@@ -4,7 +4,7 @@ from .models import Task,Category
 from datetime import timedelta
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ['name', 'created_by']
+    list_display = ['id','name', 'created_by']
 
 class TaskAdmin(admin.ModelAdmin):
     list_display = ('name', 'description', 'category_display','upload_date', 'assigned_to', 'completed', 'completed_by', 'completion_date', 'deadline_display', 'time_left')
